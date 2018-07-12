@@ -1,3 +1,49 @@
-<svg #svg></svg>
-<button class="btn btn-primary" (click)="update_data()">Update</button>
-<div class="d3-tooltip" #tooltip>Data</div>
+<div class="container">
+  <svg #svg></svg>
+  <span class="text-muted small">拖动平移，滚轮缩放。</span>
+</div>
+<div class="container">
+  <div class="row border-bottom">
+    <div class="col py-3">
+      <button class="btn btn-light mx-3" (click)="forward()">前复权</button>
+      <button class="btn btn-light mx-3" (click)="backward()">后复权</button>
+      <button class="btn btn-light mx-3" (click)="none()">不复权</button>
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">代码</span>
+        </div>
+        <input type="text" class="form-control" [(ngModel)]="code">
+      </div>
+    </div>
+    <div class="col">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">开始</span>
+        </div>
+        <input type="text" class="form-control" [(ngModel)]="startDate">
+      </div>
+    </div>
+    <div class="col">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">终止</span>
+        </div>
+        <input type="text" class="form-control" [(ngModel)]="endDate">
+      </div>
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col">
+      <app-profit-table [profits]="profit_day"></app-profit-table>
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col">
+      <button class="btn btn-block btn-outline-primary mx-3" (click)="query()">查询</button>
+    </div>
+  </div>
+</div>

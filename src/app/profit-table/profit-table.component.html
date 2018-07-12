@@ -1,0 +1,27 @@
+<table class="table">
+  <thead>
+    <tr>
+      <td></td>
+      <td>每10股配股(股)</td>
+      <td>配股价(元)</td>
+      <td>每10股送股(股)</td>
+      <td>每10股转增(股)</td>
+      <td>每10股税前派现(元)</td>
+      <td>除权除息日</td>
+      <td>股权登记日</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let records of profits; let indexA = index">
+      <td><button class="btn btn-light btn-sm" (click)="remove(indexA)">×</button></td>
+      <td *ngFor="let field of _range; let indexB = index">
+        <input type="text" class="form-control field" [(ngModel)]="profits[indexA][indexB]">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="9">
+        <button class="btn btn-light btn-sm" (click)="add()">添加</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
