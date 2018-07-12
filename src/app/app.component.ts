@@ -71,6 +71,8 @@ export class AppComponent implements AfterContentInit {
 
   tooltip: any;
 
+  loading = false;
+
   factored_data: any;
   profit_day: any = [
     [0.0,0.0,0.0,0.0,1.0,"2018-05-08","2018-05-07"],
@@ -268,10 +270,12 @@ export class AppComponent implements AfterContentInit {
   }
 
   query() {
+    this.loading = true;
     this.http.get(`http://localhost:5000/${this.code}/${this.startDate}/${this.endDate}`)
       .subscribe(result => {
         this.factored_data = get_factor(get_data(result), this.profit_day);
         this.init_data(this.factored_data);
+        this.loading = false;
       })
   }
 

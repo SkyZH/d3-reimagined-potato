@@ -44,6 +44,7 @@
   <div class="row my-3">
     <div class="col">
       <button class="btn btn-block btn-outline-primary mx-3" (click)="query()">查询</button>
+      <p class="text-center" *ngIf="loading">获取数据中...</p>
     </div>
   </div>
 </div>
