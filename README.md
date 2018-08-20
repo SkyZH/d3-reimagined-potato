@@ -4,6 +4,11 @@ Visualize stock information with split-adjusted share prices.
 
 可视化股票并进行除权除息调整。
 
+## Screenshots
+
+![image](https://user-images.githubusercontent.com/4198311/44320839-0e226a00-a477-11e8-8585-e200a9a5ae08.png)
+![image](https://user-images.githubusercontent.com/4198311/44320847-17133b80-a477-11e8-8102-e403ce4e9252.png)
+
 ## How to use
 
 ```
